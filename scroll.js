@@ -1,13 +1,14 @@
-    let scrollY = 0;
-    let distance = 30;
-    let speed = 10;
+var smoothScroller = (function() {
+    var scrollY = 0;
+    var distance = 30;
+    var speed = 10;
 
-    function smoothScrollDown(id) {
-        let currentY = window.pageYOffset;
-        let targetY = document.getElementById(id).offsetTop;
-        let bodyHeight = document.body.offsetHeight;
-        let yPos = currentY + window.innerHeight;
-        let scroller = setTimeout(() => smoothScrollDown(id), speed);
+    var __scrollDown = function(id) {
+        var currentY = window.pageYOffset;
+        var targetY = document.getElementById(id).offsetTop;
+        var bodyHeight = document.body.offsetHeight;
+        var yPos = currentY + window.innerHeight;
+        var scroller = setTimeout(() => __scrollDown(id), speed);
         if (yPos > bodyHeight) {
             clearTimeout(scroller);
         } else {
@@ -20,10 +21,10 @@
         }
     }
 
-    function smoothScrollUp(id) {
-        let currentY = window.pageYOffset;
-        let targetY = document.getElementById(id).offsetTop;
-        let scroller = setTimeout(() => smoothScrollUp(id), speed);
+    var __scrollUp = function(id) {
+        var currentY = window.pageYOffset;
+        var targetY = document.getElementById(id).offsetTop;
+        var scroller = setTimeout(() => __scrollUp(id), speed);
         if (currentY > targetY) {
             scrollY = currentY - distance;
             window.scroll(0, scrollY);
@@ -31,3 +32,10 @@
             clearTimeout(scroller);
         }
     }
+
+    return {
+        scrollDown: __scrollDown,
+        scrollUp: __scrollUp
+    }
+
+})();
