@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smooth scroller</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="icon" type="img/ico" href="favicon.ico">
+</head>
+
+<body>
+    <h1 id="heading">
+        Smooth scrolling Javascript effect
+    </h1>
+    <nav>
+        <a href="#" onclick="smoothScrollDown('one'); return false;"> section 1</a>
+        <a href="#" onclick="smoothScrollDown('two'); return false;"> section 2</a>
+        <a href="#" onclick="smoothScrollDown('three'); return false;"> section 3</a>
+        <a href="#" onclick="smoothScrollDown('four'); return false;"> section 4</a>
+    </nav>
+
+    <div id="one" class="box">Section one</div>
+    <a href="#" onclick="smoothScrollUp('heading'); return false;"> SCROLL TO TOP</a>
+
+    <div id="two" class="box">Section two</div>
+    <a href="#" onclick="smoothScrollUp('heading'); return false;"> SCROLL TO TOP</a>
+
+    <div id="three" class="box">Section three</div>
+    <a href="#" onclick="smoothScrollUp('heading'); return false;"> SCROLL TO TOP</a>
+
+    <div id="four" class="box">Section four</div>
+    <a href="#" onclick="smoothScrollUp('heading'); return false;"> SCROLL TO TOP</a>
+
+    <script type="text/javascript" src="./scroll.js"></script>
+</body>
+
+</html>
