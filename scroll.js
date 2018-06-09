@@ -12,7 +12,7 @@ var smoothScroller = (function() {
         if (yPos > bodyHeight) {
             clearTimeout(scroller);
         } else {
-            if (currentY < targetY) {
+            if (currentY < targetY - distance) {
                 scrollY = currentY + distance;
                 window.scroll(0, scrollY);
             } else {
