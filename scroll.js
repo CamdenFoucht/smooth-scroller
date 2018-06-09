@@ -9,7 +9,7 @@ var smoothScroller = (function() {
         var bodyHeight = document.body.offsetHeight;
         var yPos = currentY + window.innerHeight;
         var scroller = setTimeout(() => __scrollDown(id), speed);
-        if (yPos > bodyHeight) {
+        if (yPos >= bodyHeight) {
             clearTimeout(scroller);
         } else {
             if (currentY < targetY - distance) {
